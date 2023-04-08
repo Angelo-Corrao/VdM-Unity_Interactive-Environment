@@ -126,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	void VerticalStair() {
-		if (transform.position.y < verticalStair.position.y + (verticalStair.GetComponent<BoxCollider>().size.y / 2) + 1) { // last value is an offset
+		if (_controller.transform.localPosition.y <= 6.84f + 1f) { // 6.84 = half high; 1 = offset
 			y = _velocity.z;
 			_velocity.x = 0;
 			_velocity.z = 0;
@@ -135,6 +135,9 @@ public class PlayerMovement : MonoBehaviour
 			y = 0;
 			_velocity.x = 0;
 			_velocity.z = 0;
+			_controller.enabled = false;
+			_controller.transform.localPosition = new Vector3(0f, 6.84f + 1f, -1f);
+			_controller.enabled = true;
 		}
 	}
 }

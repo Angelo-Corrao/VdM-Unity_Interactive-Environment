@@ -14,6 +14,7 @@ public enum FireState {
 public class PlayerInteractions : MonoBehaviour
 {
 	public Canvas interact;
+	public Canvas release;
 	public Transform verticalStair;
 	public Transform campFire;
 	public VisualEffect fire_VFX;
@@ -34,12 +35,14 @@ public class PlayerInteractions : MonoBehaviour
 				if (!PlayerState.isInVerticalStair) {
 					transform.SetParent(verticalStair);
 					controller.enabled = false;
-					controller.transform.localPosition = new Vector3(-1.2f, controller.transform.localPosition.y, -1f);
+					if (controller.transform.localPosition.y > 6.84f + 1f)
+						controller.transform.localPosition = new Vector3(0f, 6.84f + 1f, -1f);
+					else
+						controller.transform.localPosition = new Vector3(0f, controller.transform.localPosition.y, -1f);
 					controller.enabled = true;
 					PlayerState.isInVerticalStair = true;
 				}
 				else {
-					Debug.Log("ok");
 					transform.SetParent(null);
 					PlayerState.isInVerticalStair = false;
 				}
@@ -79,6 +82,7 @@ public class PlayerInteractions : MonoBehaviour
 	private void OnTriggerStay(Collider other) {
 		if (other.gameObject.CompareTag("VerticalStair")) {
 			if (!PlayerState.isInVerticalStair) {
+				release.gameObject.SetActive(false);
 				Vector3 viewPos = Camera.main.WorldToViewportPoint(verticalStair.position);
 				if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.z > 0){
 					isInVerticalStairRange = true;
@@ -91,6 +95,7 @@ public class PlayerInteractions : MonoBehaviour
 			}
 			else {
 				interact.gameObject.SetActive(false);
+				release.gameObject.SetActive(true);
 			}
 		}
 
