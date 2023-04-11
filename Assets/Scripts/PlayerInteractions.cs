@@ -22,7 +22,6 @@ public class PlayerInteractions : MonoBehaviour
 	private bool isInVerticalStairRange = false;
 	private bool isInCampfireRange = false;
 	private CharacterController controller;
-	//private bool gfd = false;
 
 	private void Start() {
 		controller = GetComponent<CharacterController>();
@@ -51,27 +50,38 @@ public class PlayerInteractions : MonoBehaviour
 
 		if (isInCampfireRange) {
 			if (Input.GetKeyDown(KeyCode.E)) {
-				Vector4 color;
+				Vector4 fireColor;
+				Vector4 smokeColor;
 				switch (fireState) {
 					case FireState.OFF:
 						fire_VFX.Play();
+						StartCoroutine(SmokeEvent(false));
+						fireColor = new Color(191f / 255, 191f / 255, 191f / 255);
+						fire_VFX.SetVector4("FireColor", fireColor);
+						smokeColor = new Color(51f / 255, 51f / 255, 51f / 255);
+						StartCoroutine(ChangeSmokeColor(smokeColor));
 						fireState = FireState.DEFAULT;
 						break;
 
 					case FireState.DEFAULT:
-						color = new Color(214f / 255, 11f / 255, 11f / 255);
-						fire_VFX.SetVector4("FireColor", color);
+						fireColor = new Color(214f / 255, 11f / 255, 11f / 255);
+						fire_VFX.SetVector4("FireColor", fireColor);
+						smokeColor = new Color(241f / 255, 158f / 255, 101f / 255);
+						StartCoroutine(ChangeSmokeColor(smokeColor));
 						fireState = FireState.RED;
 						break;
 
 					case FireState.RED:
-						color = new Color(20f / 255, 180f / 255, 42f / 255);
-						fire_VFX.SetVector4("FireColor", color);
+						fireColor = new Color(20f / 255, 180f / 255, 42f / 255);
+						fire_VFX.SetVector4("FireColor", fireColor);
+						smokeColor = new Color(7f / 255, 63f / 255, 2f / 255);
+						StartCoroutine(ChangeSmokeColor(smokeColor));
 						fireState = FireState.GREEN;
 						break;
 
 					case FireState.GREEN:
 						fire_VFX.Stop();
+						StartCoroutine(SmokeEvent(true));
 						fireState = FireState.OFF;
 						break;
 				}
@@ -122,5 +132,18 @@ public class PlayerInteractions : MonoBehaviour
 			isInCampfireRange = false;
 			interact.gameObject.SetActive(false);
 		}
+	}
+
+	private IEnumerator SmokeEvent(bool isSmokeActive) {
+		yield return new WaitForSeconds(3);
+		if (!isSmokeActive)
+			fire_VFX.SendEvent("SmokePlay");
+		else
+			fire_VFX.SendEvent("SmokeStop");
+	}
+
+	private IEnumerator ChangeSmokeColor(Vector4 smokeColor) {
+		yield return new WaitForSeconds(3);
+		fire_VFX.SetVector4("SmokeColor", smokeColor);
 	}
 }
