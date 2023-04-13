@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 // This is the monitor's power button
-public class Power : ButtonAnimation
+public class RollersPowerButton : ButtonAnimation
 {
 	public Canvas interact;
 	public bool areRollersActive = true;
@@ -19,7 +19,6 @@ public class Power : ButtonAnimation
 			}
 		}
 
-		//base.Animation(minScale, maxScale, scalePerUnit, axesToScale);
 		if (isPressed) {
 			base.Animation(minScale, maxScale, scalePerUnit, axesToScale);
 

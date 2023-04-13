@@ -17,7 +17,11 @@ public class Roller : MonoBehaviour
     }
 
 	private void OnCollisionEnter(Collision collision) {
-		moveSpeed *= -1;
+		if (collision.gameObject.CompareTag("Player")) {
+
+		}
+		else
+			moveSpeed *= -1;
 	}
 
 	public void ChangeState(bool currentState) {

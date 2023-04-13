@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IDataPersistence
 {
     public float speed = 10f;
 	public float sprintSpeedMultiplier = 0.5f;
@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
 		gravity = -9.81f * gravityScale;
 	}
 
-	void Update()
+	private void Update()
     {
 		float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -104,28 +104,45 @@ public class PlayerMovement : MonoBehaviour
 		else
 			_velocity *= speed;
 
-		if (PlayerState.isInVerticalStair) {
-			VerticalStair();
+		if (isInVerticalStair) {
+			VerticalStairMovement();
 		}
 
 		_velocity.y = y;
 		_controller.Move(_velocity * Time.deltaTime);
     }
 
-	bool IsGrounded() {
+	private bool IsGrounded() {
 		float spherePositionY = transform.position.y - (_controller.height / 2) + _controller.radius - 0.002f;
 		Vector3 spherePosition = new Vector3(transform.position.x, spherePositionY, transform.position.z);
 		return Physics.CheckSphere(spherePosition, _controller.radius - 0.001f, _groundMask, QueryTriggerInteraction.Ignore);
 	}
 
-	void Jump() {
+	private void Jump() {
 		y = Mathf.Sqrt(-2.0f * gravity * maxJumpHeight);
 		_maxJumpTime = -(y / gravity);
 		_jumpTimeCounter = 0;
 		_isMaxJumpHeightReached = false;
 	}
 
-	void VerticalStair() {
+	public void SetInVerticalStair() {
+		if (!isInVerticalStair) {
+			transform.SetParent(verticalStair);
+			_controller.enabled = false;
+			if (_controller.transform.localPosition.y > 6.84f + 1f)
+				_controller.transform.localPosition = new Vector3(0f, 6.84f + 1f, -1f);
+			else
+				_controller.transform.localPosition = new Vector3(0f, _controller.transform.localPosition.y, -1f);
+			_controller.enabled = true;
+			isInVerticalStair = true;
+		}
+		else {
+			transform.SetParent(null);
+			isInVerticalStair = false;
+		}
+	}
+
+	private void VerticalStairMovement() {
 		if (_controller.transform.localPosition.y <= 6.84f + 1f) { // 6.84 = half high; 1 = offset
 			y = _velocity.z;
 			_velocity.x = 0;
@@ -139,5 +156,15 @@ public class PlayerMovement : MonoBehaviour
 			_controller.transform.localPosition = new Vector3(0f, 6.84f + 1f, -1f);
 			_controller.enabled = true;
 		}
+	}
+
+	public void LoadData(GameData gameData) {
+		_controller.enabled = false;
+		_controller.transform.position = gameData.playerPosition;
+		_controller.enabled = true;
+	}
+
+	public void SaveData(ref GameData gameData) {
+		gameData.playerPosition = _controller.transform.position;
 	}
 }
