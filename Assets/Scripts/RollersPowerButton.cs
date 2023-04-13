@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 // This is the monitor's power button
-public class RollersPowerButton : ButtonAnimation
+public class RollersPowerButton : ButtonAnimation, IDataPersistence
 {
 	public Canvas interact;
 	public bool areRollersActive = true;
@@ -58,12 +58,13 @@ public class RollersPowerButton : ButtonAnimation
 		}
 	}
 
-	// This is nedeed when the game restart, so if a game end with the monitor turned off the next game it will be on again
-	/*public void setMonitorOn() {
-		monitor.gameObject.SetActive(true);
-		if (main)
-			lines.SetActive(true);
-		isPcOn = true;
-		mesh.material = materialsOn;
-	}*/
+	public void LoadData(GameData gameData, bool isNewGame) {
+		if (isNewGame)
+			gameData.areRollersActive = areRollersActive;
+		areRollersActive = gameData.areRollersActive;
+	}
+
+	public void SaveData(ref GameData gameData) {
+		gameData.areRollersActive = areRollersActive;
+	}
 }

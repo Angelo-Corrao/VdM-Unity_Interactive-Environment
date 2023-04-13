@@ -19,11 +19,13 @@ public class MainMenuManager : MonoBehaviour {
 		Cursor.lockState = CursorLockMode.Locked;
 		DataPersistenceManager.Instance.NewGame();
 		DataPersistenceManager.Instance.SaveGame();
+		DataPersistenceManager.Instance.isNewGame = true;
 		SceneManager.LoadScene("VdM_Unity");
 	}
 
 	public void Continue() {
 		Cursor.lockState = CursorLockMode.Locked;
+		DataPersistenceManager.Instance.isNewGame = false;
 		SceneManager.LoadScene("VdM_Unity");
 	}
 

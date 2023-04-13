@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 	float y = 0f;
 
 	private void Start() {
-		_controller= GetComponent<CharacterController>();
+		_controller = GetComponent<CharacterController>();
 		baseSpeed = speed;
 		gravity = -9.81f * gravityScale;
 	}
@@ -158,13 +158,28 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 		}
 	}
 
-	public void LoadData(GameData gameData) {
+	public void LoadData(GameData gameData, bool isNewGame) {
+		if (isNewGame) {
+			//DataPersistenceManager.Instance.gameData.playerPosition = _controller.transform.position;
+			//DataPersistenceManager.Instance.gameData.playerRotation = _controller.transform.rotation;
+			gameData.playerPosition = _controller.transform.position;
+			gameData.playerRotation = _controller.transform.rotation;
+			gameData.playerIsInVerticalStair = isInVerticalStair;
+		}
 		_controller.enabled = false;
 		_controller.transform.position = gameData.playerPosition;
+		_controller.transform.rotation = gameData.playerRotation;
 		_controller.enabled = true;
+		isInVerticalStair = gameData.playerIsInVerticalStair;
+		if (isInVerticalStair) {
+			isInVerticalStair = false;
+			SetInVerticalStair();
+		}
 	}
 
 	public void SaveData(ref GameData gameData) {
 		gameData.playerPosition = _controller.transform.position;
+		gameData.playerRotation = _controller.transform.rotation;
+		gameData.playerIsInVerticalStair = isInVerticalStair;
 	}
 }

@@ -34,6 +34,7 @@ public class VerticalStair : MonoBehaviour
 				}
 			}
 			else {
+				isInRange = true;
 				interact.gameObject.SetActive(false);
 				release.gameObject.SetActive(true);
 			}

@@ -11,6 +11,7 @@ public class DataPersistenceManager : MonoBehaviour
 	public string fileName = "SaveData.json";
 	public GameData gameData;
 	public List<IDataPersistence> dataPersistenceObjects;
+	public bool isNewGame;
 	private FileDataHandler fileDataHandler;
 
 	private void Awake() {
@@ -50,7 +51,7 @@ public class DataPersistenceManager : MonoBehaviour
 		}
 
 		foreach (IDataPersistence dataPersistenceObjcet in dataPersistenceObjects) {
-			dataPersistenceObjcet.LoadData(gameData);
+			dataPersistenceObjcet.LoadData(gameData, isNewGame);
 		}
 	}
 

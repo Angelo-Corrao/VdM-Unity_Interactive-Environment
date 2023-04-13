@@ -36,7 +36,7 @@ public class FileDataHandler
         Directory.CreateDirectory(Path.GetDirectoryName(fullPath));
         string dataToStore = JsonUtility.ToJson(gameData);
         using (StreamWriter sw = File.CreateText(fullPath)) {
-            sw.Write(dataToStore);
+            sw.WriteLine(dataToStore);
         }
 	}
 }

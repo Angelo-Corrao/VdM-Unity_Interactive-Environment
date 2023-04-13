@@ -12,7 +12,7 @@ public enum FireState {
 	GREEN = 3,
 }
 
-public class Campfire : MonoBehaviour
+public class Campfire : MonoBehaviour, IDataPersistence
 {
 	public Canvas interact;
 	public VisualEffect fire_VFX;
@@ -93,5 +93,52 @@ public class Campfire : MonoBehaviour
 	private IEnumerator ChangeSmokeColor(Vector4 smokeColor) {
 		yield return new WaitForSeconds(3);
 		fire_VFX.SetVector4("SmokeColor", smokeColor);
+	}
+
+	private void InitializeFireState() {
+		Vector4 fireColor;
+		Vector4 smokeColor;
+		switch (fireState) {
+			case FireState.DEFAULT:
+				fire_VFX.SendEvent("FirePlay");
+				StartCoroutine(SmokeEvent(false));
+				fireColor = new Color(191f / 255, 191f / 255, 191f / 255);
+				fire_VFX.SetVector4("FireColor", fireColor);
+				smokeColor = new Color(51f / 255, 51f / 255, 51f / 255);
+				StartCoroutine(ChangeSmokeColor(smokeColor));
+				fireState = FireState.DEFAULT;
+				break;
+
+			case FireState.RED:
+				fire_VFX.SendEvent("FirePlay");
+				StartCoroutine(SmokeEvent(false));
+				fireColor = new Color(214f / 255, 11f / 255, 11f / 255);
+				fire_VFX.SetVector4("FireColor", fireColor);
+				smokeColor = new Color(241f / 255, 158f / 255, 101f / 255);
+				StartCoroutine(ChangeSmokeColor(smokeColor));
+				fireState = FireState.RED;
+				break;
+
+			case FireState.GREEN:
+				fire_VFX.SendEvent("FirePlay");
+				StartCoroutine(SmokeEvent(false));
+				fireColor = new Color(20f / 255, 180f / 255, 42f / 255);
+				fire_VFX.SetVector4("FireColor", fireColor);
+				smokeColor = new Color(7f / 255, 63f / 255, 2f / 255);
+				StartCoroutine(ChangeSmokeColor(smokeColor));
+				fireState = FireState.GREEN;
+				break;
+		}
+	}
+
+	public void LoadData(GameData gameData, bool isNewGame) {
+		if (isNewGame)
+			gameData.fireState = FireState.OFF;
+		fireState = gameData.fireState;
+		InitializeFireState();
+	}
+
+	public void SaveData(ref GameData gameData) {
+		gameData.fireState = fireState;
 	}
 }

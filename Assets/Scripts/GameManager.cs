@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameManager : MonoBehaviour, IDataPersistence
 {
     public static GameManager Instance;
 	public Canvas pauseMenu;
@@ -54,5 +54,16 @@ public class GameManager : MonoBehaviour
 	public void UpdateScore(float value) {
 		score += value;
 		coins.text = score.ToString();
+	}
+
+	public void LoadData(GameData gameData, bool isNewGame) {
+		if (isNewGame)
+			gameData.score = score;
+
+		UpdateScore(gameData.score);
+	}
+
+	public void SaveData(ref GameData gameData) {
+		gameData.score = score;
 	}
 }

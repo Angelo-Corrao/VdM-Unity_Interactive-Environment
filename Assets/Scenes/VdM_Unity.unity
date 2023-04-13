@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30318
+  m_Name: pb_Mesh605584
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1115,6 +1115,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 687090887}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (8)
@@ -2769,6 +2773,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1122738213}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (19)
@@ -4632,7 +4640,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30202
+  m_Name: pb_Mesh605478
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4922,6 +4930,10 @@ PrefabInstance:
     - target: {fileID: 4550266435658489665, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211037227651912329, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
+      propertyPath: id
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
@@ -5724,7 +5736,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30012
+  m_Name: pb_Mesh605292
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5888,7 +5900,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29646
+  m_Name: pb_Mesh604930
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7050,7 +7062,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29588
+  m_Name: pb_Mesh604872
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7214,7 +7226,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30524
+  m_Name: pb_Mesh605798
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8954,7 +8966,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30438
+  m_Name: pb_Mesh605704
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9118,7 +9130,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29498
+  m_Name: pb_Mesh604782
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10858,7 +10870,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30114
+  m_Name: pb_Mesh605390
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11022,7 +11034,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30276
+  m_Name: pb_Mesh605552
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12972,7 +12984,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29848
+  m_Name: pb_Mesh605122
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14298,7 +14310,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28828
+  m_Name: pb_Mesh604112
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14596,7 +14608,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30694
+  m_Name: pb_Mesh605948
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14792,7 +14804,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29876
+  m_Name: pb_Mesh605154
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14957,6 +14969,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 609627238}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (3)
@@ -15967,7 +15983,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30652
+  m_Name: pb_Mesh605906
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18177,6 +18193,10 @@ PrefabInstance:
     - target: {fileID: 4550266435658489665, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211037227651912329, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
+      propertyPath: id
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
@@ -21185,7 +21205,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30936
+  m_Name: pb_Mesh606202
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21350,6 +21370,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1843379532}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (12)
@@ -21428,6 +21452,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1530322327}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (20)
@@ -21505,7 +21533,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29992
+  m_Name: pb_Mesh605270
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21905,6 +21933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9d6085b40c8ae4690897ebdc1ef13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 2
   moveSpeed: -3
 --- !u!54 &337446327
 Rigidbody:
@@ -21960,7 +21989,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29160
+  m_Name: pb_Mesh604450
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22980,6 +23009,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1336748782}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (5)
@@ -24924,6 +24957,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 341119452}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (26)
@@ -25938,7 +25975,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30080
+  m_Name: pb_Mesh605356
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26102,7 +26139,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30806
+  m_Name: pb_Mesh606074
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -26266,7 +26303,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30582
+  m_Name: pb_Mesh605854
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -27449,6 +27486,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 944896867}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (9)
@@ -27526,7 +27567,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30466
+  m_Name: pb_Mesh605740
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28478,7 +28519,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29346
+  m_Name: pb_Mesh604634
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -28739,6 +28780,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9211037227651912329, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
+      propertyPath: id
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
 --- !u!4 &503124228 stripped
@@ -28753,6 +28798,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2138917902}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (21)
@@ -28863,6 +28912,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 215866347}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (7)
@@ -31854,7 +31907,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29002
+  m_Name: pb_Mesh604302
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -32018,7 +32071,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29518
+  m_Name: pb_Mesh604802
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -33245,7 +33298,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29726
+  m_Name: pb_Mesh605004
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -34985,7 +35038,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30378
+  m_Name: pb_Mesh605644
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -35937,7 +35990,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29086
+  m_Name: pb_Mesh604376
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -36964,7 +37017,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683485629}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 2.65}
+  m_LocalPosition: {x: 0, y: 4.46, z: -2.635}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36997,7 +37050,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29666
+  m_Name: pb_Mesh604944
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -39443,7 +39496,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30172
+  m_Name: pb_Mesh605448
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -45655,7 +45708,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28794
+  m_Name: pb_Mesh604078
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -47395,7 +47448,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30668
+  m_Name: pb_Mesh605922
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -49345,7 +49398,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29544
+  m_Name: pb_Mesh604828
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -50507,7 +50560,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30896
+  m_Name: pb_Mesh606162
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -52457,7 +52510,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29914
+  m_Name: pb_Mesh605192
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -53619,7 +53672,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28738
+  m_Name: pb_Mesh604028
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -53784,6 +53837,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1177988547}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (4)
@@ -53861,7 +53918,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30184
+  m_Name: pb_Mesh605460
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -55800,6 +55857,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9211037227651912329, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
+      propertyPath: id
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
 --- !u!4 &914136538 stripped
@@ -56602,6 +56663,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 191407735}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin
@@ -57565,7 +57630,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28868
+  m_Name: pb_Mesh604152
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -57735,6 +57800,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -57800,14 +57866,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.030538544, y: -0, z: -0, w: 0.99953365}
   m_LocalPosition: {x: 0, y: 0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 683485631}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.5, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57823,13 +57889,46 @@ MonoBehaviour:
   mouseSensitivityX: 300
   mouseSensitivityY: 300
   player: {fileID: 683485631}
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!43 &965450792
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29746
+  m_Name: pb_Mesh605024
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -58033,6 +58132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9d6085b40c8ae4690897ebdc1ef13e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 1
   moveSpeed: 3
 --- !u!54 &981091344
 Rigidbody:
@@ -58978,7 +59078,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29474
+  m_Name: pb_Mesh604758
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -59174,7 +59274,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30350
+  m_Name: pb_Mesh605618
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -59468,7 +59568,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29980
+  m_Name: pb_Mesh605258
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -59632,7 +59732,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30600
+  m_Name: pb_Mesh605872
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -61011,6 +61111,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1579155326}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (2)
@@ -61088,7 +61192,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29902
+  m_Name: pb_Mesh605180
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -61252,7 +61356,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29132
+  m_Name: pb_Mesh604422
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -61612,7 +61716,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29632
+  m_Name: pb_Mesh604916
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -63352,7 +63456,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29440
+  m_Name: pb_Mesh604728
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -65124,7 +65228,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28972
+  m_Name: pb_Mesh604272
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -66076,7 +66180,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28774
+  m_Name: pb_Mesh604058
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -67356,7 +67460,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30746
+  m_Name: pb_Mesh606004
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -69916,7 +70020,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30304
+  m_Name: pb_Mesh605570
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -70113,6 +70217,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1623305412}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (18)
@@ -70978,7 +71086,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30508
+  m_Name: pb_Mesh605782
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -72569,6 +72677,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1003493764}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 33
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (23)
@@ -72747,7 +72859,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30222
+  m_Name: pb_Mesh605498
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -73699,7 +73811,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29532
+  m_Name: pb_Mesh604816
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -74862,6 +74974,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2064330872}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 27
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (15)
@@ -74939,7 +75055,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29486
+  m_Name: pb_Mesh604770
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -75971,7 +76087,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29792
+  m_Name: pb_Mesh605064
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -77954,6 +78070,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 677915273}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (13)
@@ -78031,7 +78151,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29272
+  m_Name: pb_Mesh604562
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -79803,7 +79923,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28710
+  m_Name: pb_Mesh604000
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -80965,7 +81085,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30046
+  m_Name: pb_Mesh605324
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -83184,7 +83304,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29196
+  m_Name: pb_Mesh604488
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -83348,7 +83468,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29710
+  m_Name: pb_Mesh604988
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -84300,7 +84420,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29038
+  m_Name: pb_Mesh604330
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -85306,7 +85426,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29948
+  m_Name: pb_Mesh605226
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -86258,7 +86378,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30884
+  m_Name: pb_Mesh606150
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -86422,7 +86542,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29888
+  m_Name: pb_Mesh605166
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -87374,7 +87494,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28984
+  m_Name: pb_Mesh604284
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -87538,7 +87658,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29374
+  m_Name: pb_Mesh604662
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -87702,7 +87822,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30334
+  m_Name: pb_Mesh605600
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -88655,6 +88775,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1009977310}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (11)
@@ -88732,7 +88856,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29934
+  m_Name: pb_Mesh605210
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -88896,7 +89020,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29232
+  m_Name: pb_Mesh604522
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -89092,7 +89216,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29968
+  m_Name: pb_Mesh605246
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -90044,7 +90168,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29460
+  m_Name: pb_Mesh604744
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -90437,6 +90561,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9211037227651912329, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
+      propertyPath: id
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
 --- !u!4 &1547441819 stripped
@@ -90614,7 +90742,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28950
+  m_Name: pb_Mesh604244
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -95073,7 +95201,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29688
+  m_Name: pb_Mesh604966
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -97266,6 +97394,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2045389338}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 31
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (25)
@@ -97343,7 +97475,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29574
+  m_Name: pb_Mesh604858
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -97507,7 +97639,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30094
+  m_Name: pb_Mesh605370
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -97671,7 +97803,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29300
+  m_Name: pb_Mesh604580
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -98833,7 +98965,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28840
+  m_Name: pb_Mesh604124
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -100573,7 +100705,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29334
+  m_Name: pb_Mesh604622
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -100737,7 +100869,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30450
+  m_Name: pb_Mesh605716
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -101964,7 +102096,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30536
+  m_Name: pb_Mesh605810
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -102128,7 +102260,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28856
+  m_Name: pb_Mesh604140
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -106274,6 +106406,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1402565376}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (14)
@@ -107139,7 +107275,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30820
+  m_Name: pb_Mesh606088
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -107304,6 +107440,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1198275845}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (16)
@@ -107381,7 +107521,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30154
+  m_Name: pb_Mesh605430
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -107545,7 +107685,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29616
+  m_Name: pb_Mesh604900
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -109495,7 +109635,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30918
+  m_Name: pb_Mesh606184
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -110480,6 +110620,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2091003418}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (22)
@@ -111676,6 +111820,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2022724727}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (6)
@@ -111753,7 +111901,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29602
+  m_Name: pb_Mesh604886
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -111917,7 +112065,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30484
+  m_Name: pb_Mesh605758
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -112146,6 +112294,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9211037227651912329, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
+      propertyPath: id
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
 --- !u!4 &1904965614 stripped
@@ -112257,7 +112409,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30788
+  m_Name: pb_Mesh606046
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -112421,7 +112573,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30640
+  m_Name: pb_Mesh605894
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -112585,7 +112737,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29360
+  m_Name: pb_Mesh604648
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -113666,6 +113818,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2027366317}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (17)
@@ -113743,7 +113899,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29562
+  m_Name: pb_Mesh604846
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -114696,6 +114852,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2026064914}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (1)
@@ -115562,6 +115722,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804392660}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (27)
@@ -115639,7 +115803,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28898
+  m_Name: pb_Mesh604182
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -117786,7 +117950,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30772
+  m_Name: pb_Mesh606030
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -117950,7 +118114,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh30550
+  m_Name: pb_Mesh605826
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -118408,7 +118572,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28726
+  m_Name: pb_Mesh604016
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -118705,7 +118869,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29016
+  m_Name: pb_Mesh604316
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -120988,6 +121152,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1359259553}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (10)
@@ -121854,6 +122022,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1826758317}
     m_Modifications:
+    - target: {fileID: 3879287960346718198, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
+      propertyPath: id
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 6990790527024576325, guid: 1b04f9715456c0f4b8fee73e96631c09, type: 3}
       propertyPath: m_Name
       value: Silver Coin (24)
@@ -121931,7 +122103,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28810
+  m_Name: pb_Mesh604094
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -123193,6 +123365,10 @@ PrefabInstance:
     - target: {fileID: 4550266435658489665, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9211037227651912329, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
+      propertyPath: id
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e25ecb58d8229e49b785f98b135f285, type: 3}
