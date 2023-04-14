@@ -6,13 +6,26 @@ public class Coin : MonoBehaviour, IDataPersistence {
 	public string id;
 	public float value = 5;
 	private bool isCollected = false;
+	private float canPickUpTimer = 0.001f;
+	private bool canPickUp = false;
+
+	private void Start() {
+		StartCoroutine(WaitForPickUp(canPickUpTimer));
+	}
 
 	private void OnTriggerEnter(Collider other) {
 		if (other.gameObject.CompareTag("Player")) {
-			GameManager.Instance.UpdateScore(value);
-			isCollected = true;
-			Destroy(gameObject);
+			if (canPickUp) {
+				GameManager.Instance.UpdateScore(value);
+				isCollected = true;
+				Destroy(gameObject);
+			}
 		}
+	}
+
+	private IEnumerator WaitForPickUp(float seconds) {
+		yield return new WaitForSeconds(seconds);
+		canPickUp = true;
 	}
 
 	public void LoadData(GameData gameData, bool isNewGame) {

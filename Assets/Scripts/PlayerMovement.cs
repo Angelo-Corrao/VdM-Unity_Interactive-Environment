@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class PlayerMovement : MonoBehaviour, IDataPersistence
 {
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 	private float _jumpHangCounter = 0f;
 	private float _jumpTimeCounter = 0f;
 	private float baseSpeed;
+	private Vector3 respawnPoint;
 
 	float y = 0f;
 
@@ -30,6 +32,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 		_controller = GetComponent<CharacterController>();
 		baseSpeed = speed;
 		gravity = -9.81f * gravityScale;
+		respawnPoint = _controller.transform.position;
 	}
 
 	private void Update()
@@ -158,10 +161,14 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 		}
 	}
 
+	public void Respawn() {
+		_controller.enabled = false;
+		_controller.transform.position = respawnPoint;
+		_controller.enabled = true;
+	}
+
 	public void LoadData(GameData gameData, bool isNewGame) {
 		if (isNewGame) {
-			//DataPersistenceManager.Instance.gameData.playerPosition = _controller.transform.position;
-			//DataPersistenceManager.Instance.gameData.playerRotation = _controller.transform.rotation;
 			gameData.playerPosition = _controller.transform.position;
 			gameData.playerRotation = _controller.transform.rotation;
 			gameData.playerIsInVerticalStair = isInVerticalStair;

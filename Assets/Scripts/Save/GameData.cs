@@ -17,4 +17,5 @@ public class GameData
 	public bool areRollersActive;
 	public SerializableDictionary<string, bool> coinsCollected;
 	public float score;
+	public int deathCounter;
 }

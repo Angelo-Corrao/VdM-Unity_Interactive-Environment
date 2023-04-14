@@ -7,10 +7,13 @@ public class Roller : MonoBehaviour, IDataPersistence
 {
 	public string id;
     public float moveSpeed = 3f;
+	public Canvas deathMenu;
+	private Rigidbody rb;
 	private string currentDirection;
 	private float baseMoveSpeed;
 
 	private void Start() {
+		rb = GetComponent<Rigidbody>();
 		baseMoveSpeed = moveSpeed;
 		if (id == "1")
 			currentDirection = "Left";
@@ -25,7 +28,11 @@ public class Roller : MonoBehaviour, IDataPersistence
 
 	private void OnCollisionEnter(Collision collision) {
 		if (collision.gameObject.CompareTag("Player")) {
-
+			Cursor.lockState = CursorLockMode.None;
+			deathMenu.gameObject.SetActive(true);
+			GameManager.Instance.anyUIActive = true;
+			rb.velocity = Vector3.zero;
+			Time.timeScale = 0;
 		}
 		else {
 			moveSpeed *= -1;

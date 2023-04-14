@@ -4,14 +4,18 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour, IDataPersistence
 {
     public static GameManager Instance;
 	public Canvas pauseMenu;
 	public Text coins;
+	public Text death;
+	public UnityEvent respawn;
 	public bool anyUIActive = false;
 	public float score = 0;
+	public int deathCounter = 0;
 
 	private void Awake() {
 		if (Instance == null)
@@ -51,19 +55,37 @@ public class GameManager : MonoBehaviour, IDataPersistence
 		SceneManager.LoadScene("Main Menu");
 	}
 
+	public void Respawn() {
+		Cursor.lockState = CursorLockMode.Locked;
+		Time.timeScale = 1;
+		anyUIActive = false;
+		Death();
+		respawn?.Invoke();
+	}
+
 	public void UpdateScore(float value) {
 		score += value;
 		coins.text = score.ToString();
 	}
 
+	public void Death() {
+		deathCounter++;
+		death.text= deathCounter.ToString();
+	}
+
 	public void LoadData(GameData gameData, bool isNewGame) {
-		if (isNewGame)
+		if (isNewGame) {
 			gameData.score = score;
+			gameData.deathCounter = deathCounter;
+		}
 
 		UpdateScore(gameData.score);
+		deathCounter = gameData.deathCounter;
+		death.text = deathCounter.ToString();
 	}
 
 	public void SaveData(ref GameData gameData) {
 		gameData.score = score;
+		gameData.deathCounter = deathCounter;
 	}
 }
