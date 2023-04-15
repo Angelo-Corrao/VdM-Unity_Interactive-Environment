@@ -32,6 +32,10 @@ public class Roller : MonoBehaviour, IDataPersistence
 			deathMenu.gameObject.SetActive(true);
 			GameManager.Instance.anyUIActive = true;
 			rb.velocity = Vector3.zero;
+			AudioManager.Instance.musicSource.volume = 0.2f;
+			AudioManager.Instance.sfxSource.volume = 0.2f;
+			AudioManager.Instance.PlaySFX("Hit");
+			AudioManager.Instance.PlaySFX("Grunt");
 			Time.timeScale = 0;
 		}
 		else {

@@ -15,13 +15,12 @@ public class DataPersistenceManager : MonoBehaviour
 	private FileDataHandler fileDataHandler;
 
 	private void Awake() {
-		DontDestroyOnLoad(this.gameObject);
-
-		if (Instance == null)
+		if (Instance == null) {
 			Instance = this;
+			DontDestroyOnLoad(this.gameObject);
+		}
 		else {
 			Destroy(gameObject);
-			
 		}
 	}
 

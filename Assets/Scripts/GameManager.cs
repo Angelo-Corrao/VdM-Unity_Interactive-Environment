@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
 	private void Start() {
 		DataPersistenceManager.Instance.LoadGame();
+		AudioManager.Instance.PlayMusic("In Game", 0.8f);
 	}
 
 	private void Update() {
@@ -33,6 +34,8 @@ public class GameManager : MonoBehaviour, IDataPersistence
 			pauseMenu.gameObject.SetActive(true);
 			Cursor.lockState = CursorLockMode.None;
 			anyUIActive = true;
+			AudioManager.Instance.musicSource.volume = 0.2f;
+			AudioManager.Instance.sfxSource.volume = 0.2f;
 			Time.timeScale = 0;
 		}
 	}
@@ -45,6 +48,9 @@ public class GameManager : MonoBehaviour, IDataPersistence
 		pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
 		Cursor.lockState = CursorLockMode.Locked;
 		anyUIActive = false;
+		AudioManager.Instance.musicSource.volume = 1;
+		AudioManager.Instance.sfxSource.volume = 1;
+		AudioManager.Instance.PlaySFX("Button Click");
 		Time.timeScale = 1;
 	}
 
@@ -52,6 +58,11 @@ public class GameManager : MonoBehaviour, IDataPersistence
 		Cursor.lockState = CursorLockMode.None;
 		Time.timeScale = 1;
 		DataPersistenceManager.Instance.SaveGame();
+		AudioManager.Instance.PlaySFX("Button Click");
+		AudioManager.Instance.musicSource.volume = 1;
+		AudioManager.Instance.sfxSource.volume = 1;
+		AudioManager.Instance.musicSource.Stop();
+		AudioManager.Instance.sfxSource.Stop();
 		SceneManager.LoadScene("Main Menu");
 	}
 
@@ -60,6 +71,9 @@ public class GameManager : MonoBehaviour, IDataPersistence
 		Time.timeScale = 1;
 		anyUIActive = false;
 		Death();
+		AudioManager.Instance.musicSource.volume = 1;
+		AudioManager.Instance.sfxSource.volume = 1;
+		AudioManager.Instance.PlaySFX("Button Click");
 		respawn?.Invoke();
 	}
 

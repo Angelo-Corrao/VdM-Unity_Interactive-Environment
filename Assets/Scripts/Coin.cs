@@ -18,6 +18,7 @@ public class Coin : MonoBehaviour, IDataPersistence {
 			if (canPickUp) {
 				GameManager.Instance.UpdateScore(value);
 				isCollected = true;
+				AudioManager.Instance.PlaySFX("Coin Pickup");
 				Destroy(gameObject);
 			}
 		}
