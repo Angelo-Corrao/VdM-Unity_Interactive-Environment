@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 	private Vector3 respawnPoint;
 
 	float y = 0f;
+	float x = 0f;
+	float z = 0f;
 
 	private void Start() {
 		_controller = GetComponent<CharacterController>();
@@ -37,15 +39,21 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 
 	private void Update()
     {
-		float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+		if (!GameManager.Instance.anyUIActive) {
+			x = Input.GetAxis("Horizontal");
+			z = Input.GetAxis("Vertical");
+		}
+		else {
+			x = 0;
+			z = 0;
+		}
 
 		if (IsGrounded()) {
 			y = gravity;
 			_isDoubleJumpPressed = false;
 			_isMaxJumpHeightReached = false;
 
-			if (Input.GetKeyDown(KeyCode.Space)) {
+			if (Input.GetKeyDown(KeyCode.Space) && !GameManager.Instance.anyUIActive) {
 				Jump();
 			}
 
@@ -59,7 +67,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 		else {
 			y += gravity * Time.deltaTime;
 
-			if (Input.GetKeyDown(KeyCode.Space)) {
+			if (Input.GetKeyDown(KeyCode.Space) && !GameManager.Instance.anyUIActive) {
 				if (_jumpHangCounter <= 0) { 
 					if (!_isDoubleJumpPressed) {
 						Jump();
@@ -75,7 +83,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 				}
 			}
 
-			if (Input.GetKeyUp(KeyCode.Space) && !_isMaxJumpHeightReached) {
+			if (Input.GetKeyUp(KeyCode.Space) && !_isMaxJumpHeightReached && !GameManager.Instance.anyUIActive) {
 				y = 0f;
 				_isMaxJumpHeightReached = true;
 			}
@@ -96,7 +104,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 			}
 		}
 
-		if (Input.GetKey(KeyCode.LeftShift))
+		if (Input.GetKey(KeyCode.LeftShift) && !GameManager.Instance.anyUIActive)
 			speed = baseSpeed * sprintSpeedMultiplier;
 		else
 			speed = baseSpeed;

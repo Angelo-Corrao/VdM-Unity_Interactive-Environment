@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour {
 	public static MainMenuManager Instance;
+	private bool saveAlreadyExists = false;
 
 	private void Awake() {
 		if (Instance == null)
@@ -17,6 +19,9 @@ public class MainMenuManager : MonoBehaviour {
 
 	private void Start() {
 		AudioManager.Instance.PlayMusic("Main Menu");
+		if (File.Exists(Path.Combine(Application.persistentDataPath, DataPersistenceManager.Instance.fileName))) {
+			saveAlreadyExists = true;
+		}
 	}
 
 	public void NewGame() {
@@ -29,10 +34,12 @@ public class MainMenuManager : MonoBehaviour {
 	}
 
 	public void Continue() {
-		Cursor.lockState = CursorLockMode.Locked;
-		DataPersistenceManager.Instance.isNewGame = false;
-		AudioManager.Instance.PlaySFX("Menu Click");
-		SceneManager.LoadScene("VdM_Unity");
+		if (saveAlreadyExists) {
+			Cursor.lockState = CursorLockMode.Locked;
+			DataPersistenceManager.Instance.isNewGame = false;
+			AudioManager.Instance.PlaySFX("Menu Click");
+			SceneManager.LoadScene("VdM_Unity");
+		}
 	}
 
 	public void QuitGame() {

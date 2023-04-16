@@ -22,7 +22,7 @@ public class Campfire : MonoBehaviour, IDataPersistence
 
 	private void Update() {
 		if (isInRange) {
-			if (Input.GetKeyDown(KeyCode.E)) {
+			if (Input.GetKeyDown(KeyCode.E) && !GameManager.Instance.anyUIActive) {
 				Vector4 fireColor;
 				Vector4 smokeColor;
 				switch (fireState) {

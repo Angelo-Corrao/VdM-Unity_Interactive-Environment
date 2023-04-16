@@ -13,7 +13,7 @@ public class RollersPowerButton : ButtonAnimation, IDataPersistence
 
 	void Update() {
 		if (isInRange) {
-			if (Input.GetKeyDown(KeyCode.E)) {
+			if (Input.GetKeyDown(KeyCode.E) && !GameManager.Instance.anyUIActive) {
 				isPressed = true;
 				isPositiveAnimation = true;
 				AudioManager.Instance.PlaySFX("Button Click");

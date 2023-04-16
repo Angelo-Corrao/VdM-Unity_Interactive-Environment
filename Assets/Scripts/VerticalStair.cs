@@ -13,7 +13,7 @@ public class VerticalStair : MonoBehaviour
 
 	private void Update() {
 		if (isInRange) {
-			if (Input.GetKeyDown(KeyCode.E)) {
+			if (Input.GetKeyDown(KeyCode.E) && !GameManager.Instance.anyUIActive) {
 				interacted?.Invoke();
 			}
 		}
