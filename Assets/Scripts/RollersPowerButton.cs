@@ -1,25 +1,19 @@
 using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 // This is the monitor's power button
 public class RollersPowerButton : ButtonAnimation, IDataPersistence
 {
-	public Canvas interact;
+	public Canvas interactKM;
+	public Canvas interactGamepad;
+	public PlayerMovement playerMovement;
 	public bool areRollersActive = true;
 	public UnityEvent<bool> pressed;
 	private bool isInRange = false;
 
-
 	void Update() {
-		if (isInRange) {
-			if (Input.GetKeyDown(KeyCode.E) && !GameManager.Instance.anyUIActive) {
-				isPressed = true;
-				isPositiveAnimation = true;
-				AudioManager.Instance.PlaySFX("Button Click");
-			}
-		}
-
 		if (isPressed) {
 			base.Animation(minScale, maxScale, scalePerUnit, axesToScale);
 
@@ -33,6 +27,7 @@ public class RollersPowerButton : ButtonAnimation, IDataPersistence
 						pressed?.Invoke(false);
 						areRollersActive = true;
 					}
+					isPressed = false;
 				}
 			}
 		}
@@ -43,11 +38,19 @@ public class RollersPowerButton : ButtonAnimation, IDataPersistence
 			Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
 			if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0) {
 				isInRange = true;
-				interact.gameObject.SetActive(true);
+				if (playerMovement.currentDevice == "KM") {
+					interactKM.gameObject.SetActive(true);
+					interactGamepad.gameObject.SetActive(false);
+				}
+				else {
+					interactGamepad.gameObject.SetActive(true);
+					interactKM.gameObject.SetActive(false);
+				}
 			}
 			else {
 				isInRange = false;
-				interact.gameObject.SetActive(false);
+				interactGamepad.gameObject.SetActive(false);
+				interactKM.gameObject.SetActive(false);
 			}
 		}
 	}
@@ -55,7 +58,16 @@ public class RollersPowerButton : ButtonAnimation, IDataPersistence
 	private void OnTriggerExit(Collider other) {
 		if (other.gameObject.CompareTag("Player")) {
 			isInRange = false;
-			interact.gameObject.SetActive(false);
+			interactGamepad.gameObject.SetActive(false);
+			interactKM.gameObject.SetActive(false);
+		}
+	}
+
+	public void ButtonClick() {
+		if (isInRange && !GameManager.Instance.anyUIActive) {
+			isPressed = true;
+			isPositiveAnimation = true;
+			AudioManager.Instance.PlaySFX("Button Click");
 		}
 	}
 

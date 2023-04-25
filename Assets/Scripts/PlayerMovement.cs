@@ -1,5 +1,10 @@
+using System;
+using System.Runtime.InteropServices;
 using UnityEngine;
-using UnityEngine.Playables;
+using UnityEngine.Events;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.InputSystem.Utilities;
 
 public class PlayerMovement : MonoBehaviour, IDataPersistence
 {
@@ -11,11 +16,13 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 	public float jumpHangTimer = 0.1f;
 	public LayerMask _groundMask;
 	public Transform verticalStair;
+	public UnityEvent interacted;
 	[HideInInspector]
 	public bool isInVerticalStair = false;
+	[HideInInspector]
+	public string currentDevice = "";
 
 	private CharacterController _controller;
-    private Vector3 _velocity;
 	private float gravity;
 	private float _maxJumpTime;
 	private bool _isMaxJumpHeightReached = false;
@@ -23,70 +30,73 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 	private float _jumpBufferCounter = 0f;
 	private float _jumpHangCounter = 0f;
 	private float _jumpTimeCounter = 0f;
+	private float _isGroundedCheckTimer = 0.1f;
+	private float _isGroundedCheckCounter = 0f;
 	private float baseSpeed;
 	private Vector3 respawnPoint;
+	private float y = 0f;
+	private PlayerInputs _playerInputs;
+	private Vector2 _movement;
+	private Vector3 _direction;
 
-	float y = 0f;
-	float x = 0f;
-	float z = 0f;
+	private void OnEnable() {
+		_playerInputs.Enable();
+	}
+
+	private void OnDisable() {
+		_playerInputs.Disable();
+	}
+
+	private void Awake() {
+		_playerInputs = new PlayerInputs();
+		
+		_playerInputs.Character.Movement.performed += _ => _movement = _playerInputs.Character.Movement.ReadValue<Vector2>();
+		_playerInputs.Character.Movement.canceled += _ => _movement = Vector2.zero;
+
+		_playerInputs.Character.Jump.started += _ => JumpPressed();
+		_playerInputs.Character.Jump.canceled += _ => JumpReleased();
+
+		_playerInputs.Character.Sprint.started += _ => speed = baseSpeed * sprintSpeedMultiplier;
+		_playerInputs.Character.Sprint.canceled += _ => speed = baseSpeed;
+
+		_playerInputs.Character.Interact.started += _ => interacted?.Invoke();
+	}
 
 	private void Start() {
 		_controller = GetComponent<CharacterController>();
 		baseSpeed = speed;
 		gravity = -9.81f * gravityScale;
 		respawnPoint = _controller.transform.position;
+		InputSystem.onEvent.Call(HandleControl);
 	}
 
 	private void Update()
     {
-		if (!GameManager.Instance.anyUIActive) {
-			x = Input.GetAxis("Horizontal");
-			z = Input.GetAxis("Vertical");
+		if (GameManager.Instance.anyUIActive) {
+			_movement.x = 0;
+			_movement.y = 0;
 		}
-		else {
-			x = 0;
-			z = 0;
+
+		if (_isGroundedCheckCounter > 0) {
+			_isGroundedCheckCounter -= Time.deltaTime;
 		}
 
 		if (IsGrounded()) {
-			y = gravity;
-			_isDoubleJumpPressed = false;
-			_isMaxJumpHeightReached = false;
+			if (_isGroundedCheckCounter <= 0) {
+				y = gravity;
+				_isDoubleJumpPressed = false;
+				_isMaxJumpHeightReached = false;
 
-			if (Input.GetKeyDown(KeyCode.Space) && !GameManager.Instance.anyUIActive) {
-				Jump();
+				if (_jumpBufferCounter > 0) {
+					Jump();
+					_jumpBufferCounter = 0f;
+				}
+
+				_jumpHangCounter = jumpHangTimer;
 			}
-
-			if (_jumpBufferCounter > 0) {
-				Jump();
-				_jumpBufferCounter = 0f;
-			}
-
-			_jumpHangCounter = jumpHangTimer;
 		}
 		else {
 			y += gravity * Time.deltaTime;
-
-			if (Input.GetKeyDown(KeyCode.Space) && !GameManager.Instance.anyUIActive) {
-				if (_jumpHangCounter <= 0) { 
-					if (!_isDoubleJumpPressed) {
-						Jump();
-						_isDoubleJumpPressed = true;
-					}
-					else {
-						_jumpBufferCounter = jumpBufferTimer;
-					}
-				}
-				else {
-					Jump();
-					_jumpHangCounter = 0f;
-				}
-			}
-
-			if (Input.GetKeyUp(KeyCode.Space) && !_isMaxJumpHeightReached && !GameManager.Instance.anyUIActive) {
-				y = 0f;
-				_isMaxJumpHeightReached = true;
-			}
 
 			if (_jumpBufferCounter > 0) {
 				_jumpBufferCounter -= Time.deltaTime;
@@ -104,24 +114,50 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 			}
 		}
 
-		if (Input.GetKey(KeyCode.LeftShift) && !GameManager.Instance.anyUIActive)
-			speed = baseSpeed * sprintSpeedMultiplier;
+		_direction = transform.right * _movement.x + transform.forward * _movement.y;
+		if (_direction.magnitude > 1)
+			_direction = _direction.normalized * speed;
 		else
-			speed = baseSpeed;
-
-		_velocity = transform.right * x + transform.forward * z;
-		if (_velocity.magnitude > 1)
-			_velocity = _velocity.normalized * speed;
-		else
-			_velocity *= speed;
+			_direction *= speed;
 
 		if (isInVerticalStair) {
 			VerticalStairMovement();
 		}
 
-		_velocity.y = y;
-		_controller.Move(_velocity * Time.deltaTime);
+		_direction.y = y;
+		_controller.Move(_direction * Time.deltaTime);
     }
+
+	private void JumpPressed() {
+		if (!GameManager.Instance.anyUIActive) {
+			if (IsGrounded()) {
+				_isGroundedCheckCounter = _isGroundedCheckTimer;
+				Jump();
+			}
+			else {
+				if (_jumpHangCounter <= 0) {
+					if (!_isDoubleJumpPressed) {
+						Jump();
+						_isDoubleJumpPressed = true;
+					}
+					else {
+						_jumpBufferCounter = jumpBufferTimer;
+					}
+				}
+				else {
+					Jump();
+					_jumpHangCounter = 0f;
+				}
+			}
+		}
+	}
+
+	private void JumpReleased() {
+		if (!_isMaxJumpHeightReached && !GameManager.Instance.anyUIActive) {
+			y = 0f;
+			_isMaxJumpHeightReached = true;
+		}
+	}
 
 	private bool IsGrounded() {
 		float spherePositionY = transform.position.y - (_controller.height / 2) + _controller.radius - 0.002f;
@@ -155,14 +191,14 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 
 	private void VerticalStairMovement() {
 		if (_controller.transform.localPosition.y <= 6.84f + 1f) { // 6.84 = half high; 1 = offset
-			y = _velocity.z;
-			_velocity.x = 0;
-			_velocity.z = 0;
+			y = _direction.z;
+			_direction.x = 0;
+			_direction.z = 0;
 		}
 		else {
 			y = 0;
-			_velocity.x = 0;
-			_velocity.z = 0;
+			_direction.x = 0;
+			_direction.z = 0;
 			_controller.enabled = false;
 			_controller.transform.localPosition = new Vector3(0f, 6.84f + 1f, -1f);
 			_controller.enabled = true;
@@ -173,6 +209,15 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 		_controller.enabled = false;
 		_controller.transform.position = respawnPoint;
 		_controller.enabled = true;
+	}
+
+	private void HandleControl(InputEventPtr obj) {
+		if (obj.deviceId == 1 || obj.deviceId == 2) {
+			currentDevice = "KM";
+		}
+		else {
+			currentDevice = "Gamepad";
+		}
 	}
 
 	public void LoadData(GameData gameData, bool isNewGame) {

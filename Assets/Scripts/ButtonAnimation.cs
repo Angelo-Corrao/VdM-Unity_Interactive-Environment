@@ -43,23 +43,21 @@ public class ButtonAnimation : MonoBehaviour
 				break;
 		}
 
-		if (isPressed) {
-			if (isPositiveAnimation) {
-				if (axes > minScale) {
-					transform.localScale -= direction * scalePerUnit;
-				}
-				else {
-					isPositiveAnimation = false;
-					isNegativeAnimation = true;
-				}
+		if (isPositiveAnimation) {
+			if (axes > minScale) {
+				transform.localScale -= direction * scalePerUnit;
 			}
-			else if (isNegativeAnimation) {
-				if (axes < maxScale) {
-					transform.localScale += direction * scalePerUnit;
-				}
-				else {
-					isNegativeAnimation = false;
-				}
+			else {
+				isPositiveAnimation = false;
+				isNegativeAnimation = true;
+			}
+		}
+		else if (isNegativeAnimation) {
+			if (axes < maxScale) {
+				transform.localScale += direction * scalePerUnit;
+			}
+			else {
+				isNegativeAnimation = false;
 			}
 		}
 	}

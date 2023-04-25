@@ -5,38 +5,49 @@ using UnityEngine.Events;
 
 public class VerticalStair : MonoBehaviour
 {
-	public Canvas interact;
-	public Canvas release;
+	public Canvas interactKM;
+	public Canvas interactGamepad;
+	public Canvas releaseKM;
+	public Canvas releaseGamepad;
 	public PlayerMovement playerMovement;
 	public UnityEvent interacted;
 	private bool isInRange = false;
 
-	private void Update() {
-		if (isInRange) {
-			if (Input.GetKeyDown(KeyCode.E) && !GameManager.Instance.anyUIActive) {
-				interacted?.Invoke();
-			}
-		}
-	}
-
 	private void OnTriggerStay(Collider other) {
 		if (other.gameObject.CompareTag("Player")) {
 			if (!playerMovement.isInVerticalStair) {
-				release.gameObject.SetActive(false);
+				releaseKM.gameObject.SetActive(false);
+				releaseGamepad.gameObject.SetActive(false);
 				Vector3 viewPos = Camera.main.WorldToViewportPoint(transform.position);
 				if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.z > 0) {
 					isInRange = true;
-					interact.gameObject.SetActive(true);
+					if (playerMovement.currentDevice == "KM") {
+						interactKM.gameObject.SetActive(true);
+						interactGamepad.gameObject.SetActive(false);
+					}
+					else {
+						interactGamepad.gameObject.SetActive(true);
+						interactKM.gameObject.SetActive(false);
+					}
 				}
 				else {
 					isInRange = false;
-					interact.gameObject.SetActive(false);
+					interactKM.gameObject.SetActive(false);
+					interactGamepad.gameObject.SetActive(false);
 				}
 			}
 			else {
 				isInRange = true;
-				interact.gameObject.SetActive(false);
-				release.gameObject.SetActive(true);
+				interactKM.gameObject.SetActive(false);
+				interactGamepad.gameObject.SetActive(false);
+				if (playerMovement.currentDevice == "KM") {
+					interactKM.gameObject.SetActive(true);
+					interactGamepad.gameObject.SetActive(false);
+				}
+				else {
+					interactGamepad.gameObject.SetActive(true);
+					interactKM.gameObject.SetActive(false);
+				}
 			}
 		}
 	}
@@ -44,7 +55,14 @@ public class VerticalStair : MonoBehaviour
 	private void OnTriggerExit(Collider other) {
 		if (other.gameObject.CompareTag("Player")) {
 			isInRange = false;
-			interact.gameObject.SetActive(false);
+			interactKM.gameObject.SetActive(false);
+			interactGamepad.gameObject.SetActive(false);
+		}
+	}
+
+	public void PlayerHasInteracted() {
+		if (isInRange && !GameManager.Instance.anyUIActive) {
+			interacted?.Invoke();
 		}
 	}
 }
