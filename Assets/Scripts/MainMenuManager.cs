@@ -25,7 +25,6 @@ public class MainMenuManager : MonoBehaviour {
 	}
 
 	public void NewGame() {
-		Cursor.lockState = CursorLockMode.Locked;
 		DataPersistenceManager.Instance.NewGame();
 		DataPersistenceManager.Instance.SaveGame();
 		DataPersistenceManager.Instance.isNewGame = true;
@@ -35,7 +34,6 @@ public class MainMenuManager : MonoBehaviour {
 
 	public void Continue() {
 		if (saveAlreadyExists) {
-			Cursor.lockState = CursorLockMode.Locked;
 			DataPersistenceManager.Instance.isNewGame = false;
 			AudioManager.Instance.PlaySFX("Menu Click");
 			SceneManager.LoadScene("VdM_Unity");

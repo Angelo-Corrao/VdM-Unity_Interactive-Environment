@@ -25,8 +25,8 @@ public class CameraMovement : MonoBehaviour
 	private void Awake() {
 		_playerInputs = new PlayerInputs();
 
-		_playerInputs.Character.Rotate.performed += ctx => Dpi2Cm(ctx);
-		_playerInputs.Character.Rotate.canceled += _ => _rotation = Vector2.zero;
+		_playerInputs.Player.Rotate.performed += ctx => Dpi2Cm(ctx);
+		_playerInputs.Player.Rotate.canceled += _ => _rotation = Vector2.zero;
 	}
 
 	void Update() {
@@ -41,7 +41,7 @@ public class CameraMovement : MonoBehaviour
 	}
 
 	private void Dpi2Cm(InputAction.CallbackContext ctx) {
-		_rotation = _playerInputs.Character.Rotate.ReadValue<Vector2>();
+		_rotation = _playerInputs.Player.Rotate.ReadValue<Vector2>();
 		if (ctx.control.device.name == "Mouse") {
 			float dpi = Screen.dpi;
 

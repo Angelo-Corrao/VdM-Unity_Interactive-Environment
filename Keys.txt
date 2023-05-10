@@ -1,0 +1,7 @@
+KeysStore:
+	Name: vdm_unity
+	Password: vdm_android_version
+
+Key:
+	Name: vdm_android
+	Password: bho1234

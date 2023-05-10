@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
 	private void Update() {
 		if (Input.GetKeyDown(KeyCode.Escape) && !anyUIActive) {
 			pauseMenu.gameObject.SetActive(true);
-			Cursor.lockState = CursorLockMode.None;
 			anyUIActive = true;
 			AudioManager.Instance.musicSource.volume = 0.2f;
 			AudioManager.Instance.sfxSource.volume = 0.2f;
@@ -46,7 +45,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
 	public void Continue() {
 		pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
-		Cursor.lockState = CursorLockMode.Locked;
 		anyUIActive = false;
 		AudioManager.Instance.musicSource.volume = 1;
 		AudioManager.Instance.sfxSource.volume = 1;
@@ -55,7 +53,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
 	}
 
 	public void MainMenu() {
-		Cursor.lockState = CursorLockMode.None;
 		Time.timeScale = 1;
 		DataPersistenceManager.Instance.SaveGame();
 		AudioManager.Instance.PlaySFX("Button Click");
@@ -67,7 +64,6 @@ public class GameManager : MonoBehaviour, IDataPersistence
 	}
 
 	public void Respawn() {
-		Cursor.lockState = CursorLockMode.Locked;
 		Time.timeScale = 1;
 		anyUIActive = false;
 		Death();

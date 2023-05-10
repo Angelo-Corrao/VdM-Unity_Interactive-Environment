@@ -49,8 +49,11 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 
 	private void Awake() {
 		_playerInputs = new PlayerInputs();
-		
-		_playerInputs.Character.Movement.performed += _ => _movement = _playerInputs.Character.Movement.ReadValue<Vector2>();
+
+		_playerInputs.Player.Move.performed += _ => _movement = _playerInputs.Player.Move.ReadValue<Vector2>();
+		_playerInputs.Player.Move.canceled += _ => _movement = Vector2.zero;
+
+		/*_playerInputs.Character.Movement.performed += _ => _movement = _playerInputs.Character.Movement.ReadValue<Vector2>();
 		_playerInputs.Character.Movement.canceled += _ => _movement = Vector2.zero;
 
 		_playerInputs.Character.Jump.started += _ => JumpPressed();
@@ -59,7 +62,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 		_playerInputs.Character.Sprint.started += _ => speed = baseSpeed * sprintSpeedMultiplier;
 		_playerInputs.Character.Sprint.canceled += _ => speed = baseSpeed;
 
-		_playerInputs.Character.Interact.started += _ => interacted?.Invoke();
+		_playerInputs.Character.Interact.started += _ => interacted?.Invoke();*/
 	}
 
 	private void Start() {
@@ -128,7 +131,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 		_controller.Move(_direction * Time.deltaTime);
     }
 
-	private void JumpPressed() {
+	public void JumpPressed() {
 		if (!GameManager.Instance.anyUIActive) {
 			if (IsGrounded()) {
 				_isGroundedCheckCounter = _isGroundedCheckTimer;
@@ -166,6 +169,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 	}
 
 	private void Jump() {
+		_isGroundedCheckCounter = _isGroundedCheckTimer;
 		y = Mathf.Sqrt(-2.0f * gravity * maxJumpHeight);
 		_maxJumpTime = -(y / gravity);
 		_jumpTimeCounter = 0;
