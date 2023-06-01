@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
@@ -18,9 +19,14 @@ public class Campfire : MonoBehaviour, IDataPersistence
 	public Canvas interactGamepad;
 	public PlayerMovement playerMovement;
 	public VisualEffect fire_VFX;
+	public static event Action<Transform, string> setAudioSource;
+	//public UnityEvent<Transform, string> setAudioSource;
 	private bool isInRange = false;
 	private FireState fireState = 0;
-	private AudioSource fire_SFX;
+
+	private void Start() {
+		setAudioSource?.Invoke(transform, "Fire");
+	}
 
 	private void OnTriggerStay(Collider other) {
 		if (other.gameObject.CompareTag("Player")) {
@@ -53,14 +59,12 @@ public class Campfire : MonoBehaviour, IDataPersistence
 	}
 
 	public void PlayWithFire() {
-		if (isInRange && !GameManager.Instance.anyUIActive) {
+		if (isInRange && !GameManager.Instance.isGamePaused) {
 			Vector4 fireColor;
 			Vector4 smokeColor;
 			switch (fireState) {
 				case FireState.OFF:
-					AudioManager.Instance.PlaySFXAtPoint("Fire", transform.position);
-					fire_SFX = GameObject.Find("One shot audio").gameObject.GetComponent<AudioSource>();
-					fire_SFX.loop = true;
+					AudioManager.Instance.PlaySFX("Fire");
 					fire_VFX.SendEvent("FirePlay");
 					StartCoroutine(SmokeEvent(false));
 					fireColor = new Color(191f / 255, 191f / 255, 191f / 255);
@@ -87,10 +91,7 @@ public class Campfire : MonoBehaviour, IDataPersistence
 					break;
 
 				case FireState.GREEN:
-					if (fire_SFX != null) {
-						fire_SFX.Stop();
-						Destroy(fire_SFX.gameObject);
-					}
+					AudioManager.Instance.fireSource.Stop();
 					fire_VFX.SendEvent("FireStop");
 					StartCoroutine(SmokeEvent(true));
 					fireState = FireState.OFF;
@@ -117,9 +118,7 @@ public class Campfire : MonoBehaviour, IDataPersistence
 		Vector4 smokeColor;
 		switch (fireState) {
 			case FireState.DEFAULT:
-				AudioManager.Instance.PlaySFXAtPoint("Fire", transform.position);
-				fire_SFX = GameObject.Find("One shot audio").gameObject.GetComponent<AudioSource>();
-				fire_SFX.loop = true;
+				AudioManager.Instance.PlaySFX("Fire");
 				fire_VFX.SendEvent("FirePlay");
 				StartCoroutine(SmokeEvent(false));
 				fireColor = new Color(191f / 255, 191f / 255, 191f / 255);
@@ -130,9 +129,7 @@ public class Campfire : MonoBehaviour, IDataPersistence
 				break;
 
 			case FireState.RED:
-				AudioManager.Instance.PlaySFXAtPoint("Fire", transform.position);
-				fire_SFX = GameObject.Find("One shot audio").gameObject.GetComponent<AudioSource>();
-				fire_SFX.loop = true;
+				AudioManager.Instance.PlaySFX("Fire");
 				fire_VFX.SendEvent("FirePlay");
 				StartCoroutine(SmokeEvent(false));
 				fireColor = new Color(214f / 255, 11f / 255, 11f / 255);
@@ -143,9 +140,7 @@ public class Campfire : MonoBehaviour, IDataPersistence
 				break;
 
 			case FireState.GREEN:
-				AudioManager.Instance.PlaySFXAtPoint("Fire", transform.position);
-				fire_SFX = GameObject.Find("One shot audio").gameObject.GetComponent<AudioSource>();
-				fire_SFX.loop = true;
+				AudioManager.Instance.PlaySFX("Fire");
 				fire_VFX.SendEvent("FirePlay");
 				StartCoroutine(SmokeEvent(false));
 				fireColor = new Color(20f / 255, 180f / 255, 42f / 255);

@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour, IDataPersistence
 {
@@ -13,9 +14,13 @@ public class GameManager : MonoBehaviour, IDataPersistence
 	public Text coins;
 	public Text death;
 	public UnityEvent respawn;
-	public bool anyUIActive = false;
+	public bool isGamePaused = false;
+	public bool canPause = true;
+	public bool isPlayerDead = false;
 	public float score = 0;
 	public int deathCounter = 0;
+	public AudioMixerSnapshot pausedSnapshot;
+	public AudioMixerSnapshot unpausedSnapshot;
 
 	private void Awake() {
 		if (Instance == null)
@@ -26,55 +31,54 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
 	private void Start() {
 		DataPersistenceManager.Instance.LoadGame();
-		AudioManager.Instance.PlayMusic("In Game", 0.8f);
+		AudioManager.Instance.PlayMusic("In Game");
 	}
 
 	private void Update() {
-		if (Input.GetKeyDown(KeyCode.Escape) && !anyUIActive) {
-			pauseMenu.gameObject.SetActive(true);
-			Cursor.lockState = CursorLockMode.None;
-			anyUIActive = true;
-			AudioManager.Instance.musicSource.volume = 0.2f;
-			AudioManager.Instance.sfxSource.volume = 0.2f;
-			Time.timeScale = 0;
+		if (Input.GetKeyDown(KeyCode.Escape) && canPause) {
+			if (!isGamePaused)
+				Pause();
+			else
+				Unpause();
 		}
 	}
 
-	public void InizializeNewGame() {
-		DataPersistenceManager.Instance.NewGame();
-	}
-
 	public void Continue() {
-		pauseMenu.gameObject.SetActive(!pauseMenu.gameObject.activeSelf);
-		Cursor.lockState = CursorLockMode.Locked;
-		anyUIActive = false;
-		AudioManager.Instance.musicSource.volume = 1;
-		AudioManager.Instance.sfxSource.volume = 1;
-		AudioManager.Instance.PlaySFX("Button Click");
-		Time.timeScale = 1;
+		Unpause();
 	}
 
 	public void MainMenu() {
+		Unpause();
 		Cursor.lockState = CursorLockMode.None;
-		Time.timeScale = 1;
 		DataPersistenceManager.Instance.SaveGame();
-		AudioManager.Instance.PlaySFX("Button Click");
-		AudioManager.Instance.musicSource.volume = 1;
-		AudioManager.Instance.sfxSource.volume = 1;
 		AudioManager.Instance.musicSource.Stop();
 		AudioManager.Instance.sfxSource.Stop();
 		SceneManager.LoadScene("Main Menu");
 	}
 
 	public void Respawn() {
-		Cursor.lockState = CursorLockMode.Locked;
-		Time.timeScale = 1;
-		anyUIActive = false;
+		Unpause();
+		isPlayerDead = false;
+		canPause = true;
 		Death();
-		AudioManager.Instance.musicSource.volume = 1;
-		AudioManager.Instance.sfxSource.volume = 1;
-		AudioManager.Instance.PlaySFX("Button Click");
 		respawn?.Invoke();
+	}
+
+	public void Pause() {
+		pauseMenu.gameObject.SetActive(true);
+		Cursor.lockState = CursorLockMode.None;
+		isGamePaused = true;
+		pausedSnapshot.TransitionTo(0);
+		Time.timeScale = 0;
+	}
+
+	public void Unpause() {
+		pauseMenu.gameObject.SetActive(false);
+		Cursor.lockState = CursorLockMode.Locked;
+		isGamePaused = false;
+		AudioManager.Instance.PlaySFX("Button Click");
+		unpausedSnapshot.TransitionTo(0f);
+		Time.timeScale = 1;
 	}
 
 	public void UpdateScore(float value) {
@@ -100,6 +104,9 @@ public class GameManager : MonoBehaviour, IDataPersistence
 
 	public void SaveData(ref GameData gameData) {
 		gameData.score = score;
-		gameData.deathCounter = deathCounter;
+		if (isPlayerDead)
+			gameData.deathCounter = deathCounter + 1;
+		else
+			gameData.deathCounter = deathCounter;
 	}
 }

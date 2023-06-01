@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -72,7 +71,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 
 	private void Update()
     {
-		if (GameManager.Instance.anyUIActive) {
+		if (GameManager.Instance.isGamePaused) {
 			_movement.x = 0;
 			_movement.y = 0;
 		}
@@ -129,7 +128,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
     }
 
 	private void JumpPressed() {
-		if (!GameManager.Instance.anyUIActive) {
+		if (!GameManager.Instance.isGamePaused) {
 			if (IsGrounded()) {
 				_isGroundedCheckCounter = _isGroundedCheckTimer;
 				Jump();
@@ -153,7 +152,7 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 	}
 
 	private void JumpReleased() {
-		if (!_isMaxJumpHeightReached && !GameManager.Instance.anyUIActive) {
+		if (!_isMaxJumpHeightReached && !GameManager.Instance.isGamePaused) {
 			y = 0f;
 			_isMaxJumpHeightReached = true;
 		}
@@ -238,7 +237,10 @@ public class PlayerMovement : MonoBehaviour, IDataPersistence
 	}
 
 	public void SaveData(ref GameData gameData) {
-		gameData.playerPosition = _controller.transform.position;
+		if (GameManager.Instance.isPlayerDead)
+			gameData.playerPosition = respawnPoint;
+		else
+			gameData.playerPosition = _controller.transform.position;
 		gameData.playerRotation = _controller.transform.rotation;
 		gameData.playerIsInVerticalStair = isInVerticalStair;
 	}

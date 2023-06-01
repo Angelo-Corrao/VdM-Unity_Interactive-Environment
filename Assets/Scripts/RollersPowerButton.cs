@@ -64,7 +64,7 @@ public class RollersPowerButton : ButtonAnimation, IDataPersistence
 	}
 
 	public void ButtonClick() {
-		if (isInRange && !GameManager.Instance.anyUIActive) {
+		if (isInRange && !GameManager.Instance.isGamePaused) {
 			isPressed = true;
 			isPositiveAnimation = true;
 			AudioManager.Instance.PlaySFX("Button Click");

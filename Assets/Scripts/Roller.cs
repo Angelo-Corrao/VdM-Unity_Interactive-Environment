@@ -30,10 +30,10 @@ public class Roller : MonoBehaviour, IDataPersistence
 		if (collision.gameObject.CompareTag("Player")) {
 			Cursor.lockState = CursorLockMode.None;
 			deathMenu.gameObject.SetActive(true);
-			GameManager.Instance.anyUIActive = true;
+			GameManager.Instance.isGamePaused = true;
+			GameManager.Instance.canPause = false;
+			GameManager.Instance.isPlayerDead = true;
 			rb.velocity = Vector3.zero;
-			AudioManager.Instance.musicSource.volume = 0.2f;
-			AudioManager.Instance.sfxSource.volume = 0.2f;
 			AudioManager.Instance.PlaySFX("Hit");
 			AudioManager.Instance.PlaySFX("Grunt");
 			Time.timeScale = 0;

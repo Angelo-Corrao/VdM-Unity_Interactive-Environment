@@ -61,7 +61,7 @@ public class VerticalStair : MonoBehaviour
 	}
 
 	public void PlayerHasInteracted() {
-		if (isInRange && !GameManager.Instance.anyUIActive) {
+		if (isInRange && !GameManager.Instance.isGamePaused) {
 			interacted?.Invoke();
 		}
 	}
