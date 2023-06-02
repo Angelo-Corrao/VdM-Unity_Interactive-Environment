@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -51,8 +48,7 @@ public class GameManager : MonoBehaviour, IDataPersistence
 		Unpause();
 		Cursor.lockState = CursorLockMode.None;
 		DataPersistenceManager.Instance.SaveGame();
-		AudioManager.Instance.musicSource.Stop();
-		AudioManager.Instance.sfxSource.Stop();
+		AudioManager.Instance.StopAllSources();
 		SceneManager.LoadScene("Main Menu");
 	}
 
@@ -79,6 +75,10 @@ public class GameManager : MonoBehaviour, IDataPersistence
 		AudioManager.Instance.PlaySFX("Button Click");
 		unpausedSnapshot.TransitionTo(0f);
 		Time.timeScale = 1;
+	}
+
+	public void SetCanPause(bool value) {
+		canPause = value;
 	}
 
 	public void UpdateScore(float value) {

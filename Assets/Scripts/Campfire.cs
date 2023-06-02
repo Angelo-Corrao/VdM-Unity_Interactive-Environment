@@ -20,7 +20,6 @@ public class Campfire : MonoBehaviour, IDataPersistence
 	public PlayerMovement playerMovement;
 	public VisualEffect fire_VFX;
 	public static event Action<Transform, string> setAudioSource;
-	//public UnityEvent<Transform, string> setAudioSource;
 	private bool isInRange = false;
 	private FireState fireState = 0;
 

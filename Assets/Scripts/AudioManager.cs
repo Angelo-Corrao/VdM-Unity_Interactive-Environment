@@ -99,6 +99,13 @@ public class AudioManager : MonoBehaviour
 		return source;
 	}
 
+	public void StopAllSources() {
+		musicSource.Stop();
+		sfxSource.Stop();
+		fireSource.Stop();
+		getHitSource.Stop();
+	}
+
 	public void SetAudioSourceParent(Transform parent, string clipName) {
 		switch (clipName) {
 			case "Fire":
